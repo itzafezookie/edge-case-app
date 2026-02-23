@@ -1,0 +1,85 @@
+body {
+  overflow: hidden;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  padding-top: 5rem; /* Account for header */
+  height: calc(100vh - 8rem); /* Account for header and footer */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+  padding-bottom: 3rem; /* Add padding to account for the footer */
+}
+
+.main-content::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.main-content.grid-view {
+  padding-top: 1.5rem;
+  scroll-snap-type: none;
+}
+
+.card-container {
+  height: calc(100vh - 8rem); /* Account for header and footer */
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.alg-card {
+  background-color: #2f2f2f;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  border: 1px solid #444;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+}
+
+.alg-info {
+  text-align: center;
+}
+
+.alg-info .algorithm-notation p {
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  margin: 2px 0;
+}
+
+.alg-visualization {
+  width: 40vh;
+  height: 40vh;
+  max-width: 400px;
+  max-height: 350px;
+}
+
+.cube-image {
+  width: 100%;
+  height: 100%;
+}
+
+.alg-info h3 {
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.alg-info .algorithm-notation p {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}

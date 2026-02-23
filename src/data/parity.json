@@ -1,0 +1,172 @@
+[
+{
+    "caseName": "Edge Flip",
+    "algorithm": "Right: (R U R') (F R' F' R)*Left: (L' U' L) (F' L F L')",
+    "imageIdentifier": "EdgeFlip",
+    "validFor": "ALL",
+    "baseSize": 4,
+    "visualization": {
+              "viewType": "profile",
+              "stretchModes": {
+                "Top-Front": "link-centers"
+              },
+      "size": 3,
+      "colorMap": {
+        "top": [
+          "XXX",
+          "XXX",
+          "XXX"
+                ],
+        "front": [
+          "XXX",
+          "XGR",
+          "XXX"
+        ],
+        "right": [
+          "XXX",
+          "XRG",
+          "XXX"
+        ]
+      }
+    }
+  },
+
+
+    {
+    "caseName": "Final Edge Pairing Parity",
+    "algorithm": "Dynamic",
+    "imageIdentifier": "FinalEdgeParity",
+    "validFor": "all",
+    "baseSize": 5,
+    "visualization": {
+        "viewType": "profile",
+        "generator": "finalEdgeParity",
+        "stretchModes": {
+          "Top-Front": "dynamic"
+        },
+        "libraryPreview": {
+          "size": 5,
+          "colorMap": {
+            "top": [
+              "XXXXX",
+              "XXXXX",
+              "XXXXX",
+              "XXXXX",
+              "XGWGX"
+            ],
+            "front": [
+              "XWGWX",
+              "XXXXX",
+              "XXXXX",
+              "XXXXX",
+              "XXXXX"
+            ],
+            "right": [
+              "XXXXX",
+              "XXXXX",
+              "XXXXX",
+              "XXXXX",
+              "XXXXX"
+            ]
+          }
+        }
+    }
+  },
+  
+  {
+    "caseName": "Even Layer OLL Parity",
+    "algorithm": "(r2 B2 U2 l) (U2 r' U2 r) * (U2 F2 r F2) (l' B2 r2)",
+    "imageIdentifier": "EvenLayerOLLParity",
+    "validFor": "even",
+    "baseSize": 4,
+    "visualization": {
+              "viewType": "profile",
+              "stretchModes": {
+                "Top-Front": "link-centers"
+              },
+      "size": 3,
+      "colorMap": {
+        "top": [
+          "WWW",
+          "WWW",
+          "WGW"
+                ],
+        "front": [
+          "GWG",
+          "GGG",
+          "GGG"
+        ],
+        "right": [
+          "RRR",
+          "RRR",
+          "RRR"
+        ]
+      }
+    }
+  },
+
+  {
+    "caseName": "Even Layer PLL Parity",
+    "algorithm": "(r2 U2) (r2 Uw2) (r2 u2)",
+    "imageIdentifier": "EvenLayerPLLParity",
+    "validFor": "even",
+    "baseSize": 4,
+    "visualization": {
+              "viewType": "profile",
+              "stretchModes": {
+                "Top-Front": "link-centers"
+              },
+      "size": 3,
+      "colorMap": {
+        "top": [
+          "WWW",
+          "WWW",
+          "WWW"
+                ],
+        "front": [
+          "GBG",
+          "GGG",
+          "GGG"
+        ],
+        "right": [
+          "RRR",
+          "RRR",
+          "RRR"
+        ]
+      }
+    }
+  },
+
+  {
+    "caseName": "Even Layer Front/Back Face Swap",
+    "algorithm": "Rw2 B2 F2 Rw2",
+    "imageIdentifier": "EvenLayerFrontBackFaceSwap",
+    "validFor": "even",
+    "baseSize": 4,
+    "visualization": {
+              "viewType": "profile",
+              "stretchModes": {
+                "Top-Front": "link-centers"
+              },
+      "size": 3,
+      "colorMap": {
+        "top": [
+          "WWW",
+          "WWW",
+          "WWW"
+                ],
+        "front": [
+          "BBB",
+          "BBB",
+          "BBB"
+        ],
+        "right": [
+          "ORO",
+          "ORO",
+          "ORO"
+        ]
+      }
+    }
+  }
+
+]

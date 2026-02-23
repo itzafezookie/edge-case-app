@@ -1,0 +1,128 @@
+[
+  {
+    "caseName": "Sune",
+    "algorithm": "(R U R' U) (R U2 R')",
+    "imageIdentifier": "oll-sune",
+    "visualization": {
+      "viewType": "top-down",
+      "size": 3,
+      "colorMap": [
+        "XYX",
+        "YYY",
+        "YYX",
+        "YXX",
+        "XXY",
+        "XXX",
+        "YXX"
+      ]
+    }
+  },
+  {
+    "caseName": "Anti-Sune",
+    "algorithm": "(R U2 R' U') (R U' R')",
+    "imageIdentifier": "oll-antisune",
+    "visualization": {
+      "viewType": "top-down",
+      "size": 3,
+      "colorMap": [
+        "XYY",
+        "YYY",
+        "XYX",
+        "XXX",
+        "YXX",
+        "YXX",
+        "XXY"
+      ]
+    }
+  },
+  {
+    "caseName": "T",
+    "algorithm": "(r U R' U') (r' F R F')",
+    "imageIdentifier": "oll-t",
+    "visualization": {
+      "viewType": "top-down",
+      "size": 3,
+      "colorMap": [
+        "XYY",
+        "YYY",
+        "XYY",
+        "YXX",
+        "YXX",
+        "XXX",
+        "XXX"
+      ]
+    }
+  },
+  {
+    "caseName": "L",
+    "algorithm": "(F R' F' r) (U R U' r')",
+    "imageIdentifier": "oll-l",
+    "visualization": {
+      "viewType": "top-down",
+      "size": 3,
+      "colorMap": [
+        "YYX",
+        "YYY",
+        "XYY",
+        "XXX",
+        "YXX",
+        "XXX",
+        "YXX"
+      ]
+    }
+  },
+  {
+    "caseName": "U",
+    "algorithm": "R2 D (R' U2 R) D' (R' U2 R')",
+    "imageIdentifier": "oll-u",
+    "visualization": {
+      "viewType": "top-down",
+      "size": 3,
+      "colorMap": [
+        "YYY",
+        "YYY",
+        "XYX",
+        "XXX",
+        "YXY",
+        "XXX",
+        "XXX"
+      ]
+    }
+  },
+  {
+    "caseName": "H",
+    "algorithm": "(R U R' U) (R U' R' U) (R U2 R')",
+    "imageIdentifier": "oll-h",
+    "visualization": {
+      "viewType": "top-down",
+      "size": 3,
+      "colorMap": [
+        "XYX",
+        "YYY",
+        "XYX",
+        "XXX",
+        "XXX",
+        "YXY",
+        "YXY"
+      ]
+    }
+  },
+  {
+    "caseName": "Pi",
+    "algorithm": "R U2 (R2 U' R2 U' R2) U2 R",
+    "imageIdentifier": "oll-pi",
+    "visualization": {
+      "viewType": "top-down",
+      "size": 3,
+      "colorMap": [
+        "XYX",
+        "YYY",
+        "XYX",
+        "XXY",
+        "XXY",
+        "YXY",
+        "XXX"
+      ]
+    }
+  }
+]

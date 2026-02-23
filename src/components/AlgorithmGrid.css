@@ -1,0 +1,32 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+  padding-top: 6rem; /* Account for sticky header */
+}
+
+.grid-item {
+  background-color: #2f2f2f;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.grid-item:hover {
+  background-color: #4a4a4a;
+}
+
+.grid-item-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.grid-item-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}

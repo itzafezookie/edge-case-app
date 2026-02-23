@@ -1,0 +1,119 @@
+# Commutator Generator Logic
+
+This document outlines the validation and algorithm generation logic for the Commutator Generator feature.
+
+### Part 1: Validation Logic
+
+**Step 1: Define Starting Zone (Columns)**
+
+*   When a user selects a block of stickers, identify the set of **inner column numbers** it occupies. This set is the "Starting Zone".
+    *   *Example: On a 7x7, a selection in the 2nd and 3rd inner columns gives a Starting Zone of `{2, 3}`.*
+
+**Step 2: Define Secondary Zone (Rows)**
+
+*   For the same selection, identify the set of **inner row numbers** it occupies. This set is the "Secondary Zone".
+    *   *Example: On a 7x7, a selection in the 2nd and 3rd inner rows gives a Secondary Zone of `{2, 3}`.*
+
+**Step 3: Compare Zones to Determine Validity and Turn Direction**
+
+*   To check for validity, we compare the **Starting Zone** numbers against the **Secondary Zone** numbers in two ways, simulating an F and F' turn.
+
+    1.  **Comparison A (F turn simulation):** Check if any numbers in the **Starting Zone** also exist in the **Secondary Zone**.
+    2.  **Comparison B (F' turn simulation):** Check if any numbers in the **Starting Zone** also exist in a *mirrored* version of the **Secondary Zone**. (The mirrored version is found by replacing each row number `N` with `(InnerGridSize - N + 1)`).
+
+*   **The Rules:**
+    *   If **both** Comparison A and Comparison B find matching numbers: The selection is **INVALID**.
+    *   If **only one** of the comparisons finds matching numbers: The selection is **VALID**.
+        *   The comparison that had **no matches** determines the starting turn direction for the algorithm (Comparison A -> F turn, Comparison B -> F' turn).
+    *   If **neither** comparison finds matching numbers: The selection is **VALID** (this is a "middle slice" case). The algorithm will default to using an F turn first.
+
+### Part 2: Algorithm Generation
+
+The algorithm is an 8-move sequence to swap center blocks, structured as `(Move1 Move2 Move3 Move4) (Move5 Move6 Move7 Move8)`.
+*Example: `(lw F [2-3]r' F') (lw' F [2-3]r F')`*
+
+*   **Inputs from Validation:**
+    *   `startingZoneCols`: The set of inner column numbers for the selected block.
+    *   `secondaryZoneRows`: The set of inner row numbers for the selected block.
+    *   `turnDirection`: The valid first turn ('F' or 'F\''), determined by the validation step.
+
+---
+
+**The 8 Moves:**
+
+**1. Move 1: Setup Starting Block**
+*   **Purpose:** Bring starting columns from the Up face to the Front face.
+*   **Derivation:** Based on `startingZoneCols`.
+*   **Logic:** Convert `startingZoneCols` to slice move notation (e.g., `[2-4]l`, `[3-4]r'`, `3m`).
+
+**2. Move 2: Insert**
+*   **Purpose:** Rotate target pieces on the Front face.
+*   **Derivation:** Based on `turnDirection`. If both directions are valid, prioritize `F`.
+*   **Logic:** `F` or `F'`.
+
+**3. Move 3: Setup Secondary Block**
+*   **Purpose:** Pre-move the destination columns on the Up face.
+*   **Derivation:** Based on the `secondaryZoneRows` and `turnDirection`.
+*   **Logic:** The `secondaryZoneRows` are mapped to a set of columns, which are then converted to slice move notation.
+
+**4. Move 4: Undo Insert**
+*   **Purpose:** Inverse of Move 2.
+*   **Logic:** If Move 2 was `F`, this is `F'`. If `F'`, this is `F`.
+
+**5. Move 5: Undo Setup Starting Block**
+*   **Purpose:** Inverse of Move 1.
+*   **Logic:** If Move 1 was `[2-3]l`, this is `[2-3]l'`.
+
+**6. Move 6: Insert (Repeat)**
+*   **Purpose:** Same as Move 2.
+
+**7. Move 7: Undo Setup Secondary Block**
+*   **Purpose:** Inverse of Move 3.
+
+**8. Move 8: Undo Insert (Repeat)**
+*   **Purpose:** Same as Move 4.
+
+### Part 3: Notation Generation
+
+This section defines how to convert a set of inner column indices into the correct slice move notation for Moves 1, 3, 5, and 7.
+
+**A. Front Face Notation (F/F')**
+
+*   This is the simplest case. The move is determined directly by the `turnDirection` from the validation step (Part 1, Step 3).
+*   If both directions are valid (middle slice case), the algorithm defaults to `F`.
+
+**B. Slice Move Notation (l, r', m)**
+
+*   This applies to `startingZoneCols` and the columns derived from `secondaryZoneRows`.
+
+**Step 1: Analyze Column Positions**
+
+*   For a given set of inner column indices, find the center line of the inner grid. The center is `(innerGridSize - 1) / 2`.
+*   Count how many selected columns are to the left of the center line (`col < center`).
+*   Count how many selected columns are to the right of the center line (`col > center`).
+
+*   **Note for Odd-Layered Cubes:** For odd cubes, the center column has a single, integer index. To simplify, this center column can be included in *both* the left and right counts. The resulting majority comparison will still be correct.
+
+**Step 2: Determine Move Type (l, r', or m)**
+
+*   If **`count_left` > `count_right`**: The move is an **`l` type**.
+*   If **`count_right` > `count_left`**: The move is an **`r'` type**.
+*   If **`count_left` == `count_right`**: The move is an **`m` type** (a centered slice or block).
+
+**Step 3: Generate Final Notation String**
+
+*   **For `l` type moves:**
+    *   Find the widest slice number in the selection (max column index + 2).
+    *   If it's a single slice (e.g., just column 0), the notation is `2l` (or `l`).
+    *   If it's a contiguous block, the notation is `[min_slice-max_slice]l` (e.g., `[3-5]l`).
+
+*   **For `r'` type moves:**
+    *   The logic is similar to `l` moves but counted from the right edge.
+    *   Find the widest slice number from the right.
+    *   *Examples: `r'`, `3r'`, `[2-4]r'`.*
+
+*   **For `m` type moves:**
+    *   The notation indicates the width and position of the middle slice(s).
+    *   The width is the number of columns in the selection.
+    *   The position is the slice number of the centermost slice in the selection.
+    *   *Examples: `m` (odd cubes), `2m` (even cubes), `3m` (odd cubes), etc.*

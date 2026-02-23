@@ -1,0 +1,13 @@
+.cube-image-placeholder {
+  background-color: #111;
+  border: 2px dashed #444;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  color: #888;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
