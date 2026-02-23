@@ -84,7 +84,7 @@ function App() {
   return (
     <div className="App">
       <Header onHomeClick={handleHomeClick} />
-      <main className={`main-content ${viewMode === 'grid' ? 'grid-view' : ''}`} ref={scrollContainerRef}>
+      <main className={`main-content ${viewMode === 'grid' ? 'grid-view' : ''} ${activeCategory === 'home' ? 'home-view' : ''}`} ref={scrollContainerRef}>
         {activeCategory === 'home' ? (
           <HomePage onCategorySelect={handleCategorySelect} cubeSize={cubeSize} />
         ) : viewMode === 'grid' && activeCategory !== 'com-gen' ? (

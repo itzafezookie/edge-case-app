@@ -27,6 +27,14 @@ body {
   scroll-snap-type: none;
 }
 
+.main-content.home-view {
+  overflow-y: hidden;
+  scroll-snap-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-container {
   height: calc(100vh - 8rem); /* Account for header and footer */
   scroll-snap-align: center;
