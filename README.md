@@ -8,7 +8,7 @@ You can access the live application here: **[https://itzafezookie.github.io/edge
 
 ## Features
 
-*   **Algorithm Libraries:** Fully searchable libraries for OLL, PLL, and Parity algorithms, complete with dynamic SVG visualizations that adjust to your selected cube size.
+*   **Algorithm Libraries:** Full libraries for all necessary OLL, PLL, and Parity algorithms, complete with dynamic SVG visualizations that adjust to your selected cube size.
 *   **Interactive Commutator Generator:** A unique tool that allows you to select stickers on a cube face to instantly generate the correct commutator algorithm, including complex slice moves.
 *   **Dynamic Cube Size:** All visualizations and algorithms dynamically adjust for cube sizes from 4x4 up to 15x15.
 *   **Responsive & Mobile-First:** Designed to work beautifully on any screen size, from a desktop monitor to your phone.
