@@ -9,7 +9,7 @@ body {
 }
 
 .main-content {
-  padding-top: 5rem; /* Account for header */
+  scroll-padding-top: 5rem; /* Account for header */
   height: calc(100vh - 8rem); /* Account for header and footer */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
