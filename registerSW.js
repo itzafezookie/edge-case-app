@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/edge-case-app/sw.js', { scope: '/edge-case-app/' })})}
