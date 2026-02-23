@@ -196,6 +196,22 @@ const CommutatorGenerator = ({ cubeSize }) => {
     runValidationAndSetState(newSelection);
   };
 
+  const handleTouchStart = (e, index, isOuter) => {
+    e.preventDefault();
+    handleMouseDown(index, isOuter);
+  };
+
+  const handleTouchMove = (e, index, isOuter) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const targetElement = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (targetElement && targetElement.dataset.index) {
+      const targetIndex = parseInt(targetElement.dataset.index, 10);
+      const targetIsOuter = targetElement.dataset.outer === 'true';
+      handleMouseEnter(targetIndex, targetIsOuter);
+    }
+  };
+
   const handleMouseUp = () => {
     if (isDragging) {
       if (isSelectionValid && lastInteractionData) {
@@ -244,9 +260,14 @@ const CommutatorGenerator = ({ cubeSize }) => {
 
   useEffect(() => {
     const handleMouseUpGlobal = () => handleMouseUp();
+    const handleTouchEndGlobal = () => handleMouseUp(); // Reuse mouse up logic
+
     window.addEventListener('mouseup', handleMouseUpGlobal);
+    window.addEventListener('touchend', handleTouchEndGlobal);
+
     return () => {
       window.removeEventListener('mouseup', handleMouseUpGlobal);
+      window.removeEventListener('touchend', handleTouchEndGlobal);
     };
   }, [isDragging, isSelectionValid, selectedStickers, size]);
 
@@ -274,6 +295,10 @@ const CommutatorGenerator = ({ cubeSize }) => {
           ry={cornerRadius}
           onMouseDown={() => handleMouseDown(i, isOuterSticker)}
           onMouseEnter={() => handleMouseEnter(i, isOuterSticker)}
+          onTouchStart={(e) => handleTouchStart(e, i, isOuterSticker)}
+          onTouchMove={(e) => handleTouchMove(e, i, isOuterSticker)}
+          data-index={i}
+          data-outer={isOuterSticker}
           style={{ cursor: isOuterSticker ? 'default' : 'pointer' }}
         />
       );

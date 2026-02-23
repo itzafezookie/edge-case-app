@@ -10,7 +10,7 @@ const Footer = ({ cubeSize, setCubeSize, viewMode, onBackToLibrary, activeCatego
 
   return (
     <footer className="app-footer">
-      {viewMode === 'detail' && activeCategory !== 'com-gen' && (
+      {viewMode === 'detail' && activeCategory !== 'com-gen' && activeCategory !== 'home' && (
         <button onClick={onBackToLibrary} className="back-to-library-btn">
           &larr; Back to Library
         </button>
