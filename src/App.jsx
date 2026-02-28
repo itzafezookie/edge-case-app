@@ -138,7 +138,8 @@ function App() {
                           ? generateFinalEdgeParityAlgo(cubeSize, activeParityEdge)
                           : alg.algorithm || (alg.algorithms && alg.algorithms['4x4']),
                         cubeSize,
-                        alg.baseSize
+                        alg.baseSize,
+                        activeCategory
                       )
                         .split('*')
                         .map((line, index) => (

@@ -7,13 +7,13 @@
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "XYX",
-        "YYY",
-        "YYX",
-        "YXX",
-        "XXY",
+        "XWX",
+        "WWW",
+        "WWX",
+        "WXX",
+        "XXW",
         "XXX",
-        "YXX"
+        "WXX"
       ]
     }
   },
@@ -25,13 +25,13 @@
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "XYY",
-        "YYY",
-        "XYX",
+        "XWW",
+        "WWW",
+        "XWX",
         "XXX",
-        "YXX",
-        "YXX",
-        "XXY"
+        "WXX",
+        "WXX",
+        "XXW"
       ]
     }
   },
@@ -43,11 +43,11 @@
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "XYY",
-        "YYY",
-        "XYY",
-        "YXX",
-        "YXX",
+        "XWW",
+        "WWW",
+        "XWW",
+        "WXX",
+        "WXX",
         "XXX",
         "XXX"
       ]
@@ -61,13 +61,13 @@
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "YYX",
-        "YYY",
-        "XYY",
+        "WWX",
+        "WWW",
+        "XWW",
         "XXX",
-        "YXX",
+        "WXX",
         "XXX",
-        "YXX"
+        "WXX"
       ]
     }
   },
@@ -79,11 +79,11 @@
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "YYY",
-        "YYY",
-        "XYX",
+        "WWW",
+        "WWW",
+        "XWX",
         "XXX",
-        "YXY",
+        "WXW",
         "XXX",
         "XXX"
       ]
@@ -97,13 +97,13 @@
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "XYX",
-        "YYY",
-        "XYX",
+        "XWX",
+        "WWW",
+        "XWX",
         "XXX",
         "XXX",
-        "YXY",
-        "YXY"
+        "WXW",
+        "WXW"
       ]
     }
   },
@@ -115,12 +115,12 @@
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "XYX",
-        "YYY",
-        "XYX",
-        "XXY",
-        "XXY",
-        "YXY",
+        "XWX",
+        "WWW",
+        "XWX",
+        "XXW",
+        "XXW",
+        "WXW",
         "XXX"
       ]
     }

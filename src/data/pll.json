@@ -7,11 +7,11 @@
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "YYY",
-        "YYY",
-        "YYY",
-        "BXG",
-        "BXG",
+        "WWW",
+        "WWW",
+        "WWW",
+        "GXB",
+        "GXB",
         "RXO",
         "RXO"
       ],
@@ -28,13 +28,13 @@
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "YYY",
-        "YYY",
-        "YYY",
-        "GXR",
+        "WWW",
+        "WWW",
+        "WWW",
         "BXR",
+        "GXR",
         "OXO",
-        "BXG"
+        "GXB"
       ],
       "arrows": [
         "390"
@@ -49,11 +49,11 @@
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "YYY",
-        "YYY",
-        "YYY",
-        "GBG",
+        "WWW",
+        "WWW",
+        "WWW",
         "BGB",
+        "GBG",
         "ORO",
         "ROR"
       ],
@@ -65,18 +65,18 @@
   },
   {
     "caseName": "Ua-Perm (Edges)",
-    "algorithm": "R U' (R U R U) (R U' R' U') R2",
+    "algorithm": "M2 U M U2 M' U M2",
     "imageIdentifier": "pll-uaperm",
     "visualization": {
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "YYY",
-        "YYY",
-        "YYY",
-        "GGG",
-        "BRB",
-        "OBO",
+        "WWW",
+        "WWW",
+        "WWW",
+        "BBB",
+        "GRG",
+        "OGO",
         "ROR" 
       ],
       "arrows": [
@@ -88,19 +88,19 @@
   },
   {
     "caseName": "Ub-Perm (Edges)",
-    "algorithm": "R2 U (R U R' U') (R' U' R' U) R'",
+    "algorithm": "M2 U' M U2 M' U' M2",
     "imageIdentifier": "pll-ubperm",
     "visualization": {
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "YYY",
-        "YYY",
-        "YYY",
-        "GGG",
-        "BRB",
-        "OBO",
-        "ROR"
+        "WWW",
+        "WWW",
+        "WWW",
+        "BBB",
+        "GOG",
+        "ORO",
+        "RGR"
       ],
       "arrows": [
         "4621",
@@ -111,23 +111,69 @@
   },
   {
     "caseName": "Z-Perm (Edges)",
-    "algorithm": "M' U (M2 U M2 U) M' U2 M2",
+    "algorithm": "M' U (M2 U M2 U)*M' U2 M2",
     "imageIdentifier": "pll-zperm",
     "visualization": {
       "viewType": "top-down",
       "size": 3,
       "colorMap": [
-        "YYY",
-        "YYY",
-        "YYY",
-        "RBR",
-        "OGO",
+        "WWW",
+        "WWW",
+        "WWW",
+        "BRB",
         "GOG",
-        "BRB" 
+        "OGO",
+        "RBR" 
       ],
       "arrows": [
         "260",
         "480"
+      ]
+    }
+  },
+  {
+    "caseName": "Aa-Perm (Edges)",
+    "algorithm": "X L2 D2 (L' U' L)*D2 (L' U L')",
+    "imageIdentifier": "pll-aaperm",
+    "visualization": {
+      "viewType": "top-down",
+      "size": 3,
+      "colorMap": [
+        "WWW",
+        "WWW",
+        "WWW",
+        "RBG",
+        "OGG",
+        "BOB",
+        "ORR" 
+      ],
+      "arrows": [
+        "1321",
+        "3721",
+        "7121"
+      ]
+    }
+  },
+    {
+    "caseName": "Ab-Perm (Edges)",
+    "algorithm": "X' L2 D2 (L U L')*D2 (L U' L)",
+    "imageIdentifier": "pll-aaperm",
+    "visualization": {
+      "viewType": "top-down",
+      "size": 3,
+      "colorMap": [
+        "WWW",
+        "WWW",
+        "WWW",
+        "OBB",
+        "RGB",
+        "GOG",
+        "RRO" 
+      ],
+      "arrows": [
+        "1721",
+        "7921",
+        "9121"
       ]
     }
   }
